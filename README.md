@@ -2,7 +2,26 @@
 
 Portfólio pessoal da **buzina de bibi** — front-end developer formada, com foco em full-stack developer e estudando back-end com PHP e SQL.
 
-> Objetivo: estágio ou vaga júnior como front-end developer ou full-stack developer.
+## Sobre mim
+
+Sou desenvolvedora formada em **front-end** e com foco em **full-stack**. Comecei pelo visual e estou indo para o servidor: hoje estudo **back-end com PHP e SQL**.
+
+Gosto de transformar layout em produto de verdade: componentes organizados, interfaces responsivas e movimento na medida certa. Também contribuo com open source na [He4rt Developers](https://heartdevs.com/), onde participo de iniciativas da comunidade, abro pull requests e aprendo e compartilho código com outras pessoas desenvolvedoras.
+
+**O que eu faço**
+
+- Interfaces responsivas, do Figma ao código (front-end developer)
+- Componentes em React + Tailwind (front-end developer)
+- Lógica e interação com JavaScript (front-end developer)
+- Back-end e banco de dados com PHP + SQL (back-end developer)
+- Versionamento e colaboração com Git e GitHub (ferramentas)
+
+| | |
+| --- | --- |
+| **Objetivo** | Estágio ou vaga júnior como front-end developer ou full-stack developer |
+| **Formação** | Técnico em Informática para Internet, com ênfase em front-end developer (concluído) |
+| **Estudando agora** | Back-end developer com PHP e SQL, rumo a full-stack developer |
+| **Stack principal** | React, JavaScript, Tailwind CSS, Vite, React Router, HTML5, CSS3, PHP, SQL, Git, Postman, Figma |
 
 ## Sobre o projeto
 
