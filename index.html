@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>buzina de bibi — front-end developer · full-stack developer em formação</title>
+<meta name="description" content="Portfólio da buzina de bibi: desenvolvedora formada em front-end, com foco em full-stack e estudando back-end com PHP e SQL.">
+<meta name="theme-color" content="#050506">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/tema.js"></script>
+</head>
+<body>
+<div class="fx fx--grain" aria-hidden="true"></div>
+<div class="fx fx--vig" aria-hidden="true"></div>
+<div class="glowf" id="glowf" aria-hidden="true"></div>
+
+<!-- Buzina em tela cheia. -->
+<div class="honk" id="honk" aria-hidden="true"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></div>
+
+<div class="lamps" id="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#início" aria-label="buzina de bibi — início">
+    <strong class="draw"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></strong>
+  </a>
+  <nav class="shifter" aria-label="Seções">
+    <i class="shifter__pill" id="pill" aria-hidden="true"></i>
+    <a class="gear on" href="#início" data-g="00"><b>00</b><span>Início</span></a>
+    <a class="gear" href="#sobre" data-g="01"><b>01</b><span>Sobre</span></a>
+    <a class="gear" href="#skills" data-g="02"><b>02</b><span>Skills</span></a>
+    <a class="gear" href="#projetos" data-g="03"><b>03</b><span>Projetos</span></a>
+    <a class="gear" href="#contato" data-g="04"><b>04</b><span>Contato</span></a>
+  </nav>
+  <div class="tools">
+    <button class="ib" id="themeBtn" type="button" aria-pressed="false" aria-label="Mudar para o tema branco e roxo" title="Tema claro / escuro">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><mask id="moonMask"><rect width="24" height="24" fill="#fff"/><circle class="moon-cut" cx="26" cy="2" r="6" fill="#000"/></mask><circle class="sun" cx="12" cy="12" r="4.6" mask="url(#moonMask)"/><g class="rays"><path d="M12 1.6v2.3M12 20.1v2.3M1.6 12h2.3M20.1 12h2.3M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></g></svg>
+    </button>
+    <button class="ib" id="snd" type="button" aria-pressed="false" aria-label="Ligar o som do motor" title="som do motor">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+    </button>
+    <button class="horn" id="hornBtn" type="button" data-mag><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2" class="f"/></svg><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="início">
+  <div class="wrap">
+    <div class="hg">
+      <div>
+        <div class="kick rv">
+          <span class="tag"><b>front-end developer</b> rumo a full-stack developer</span>
+        </div>
+        <h1><span class="ln"><span>Oi, eu sou</span></span><span class="ln"><span class="a">a buzina</span></span><span class="ln"><span><span class="o">de</span> <span class="draw"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></span></span></span></h1>
+        <p class="lede rv d1">Sou <b>formada em front-end</b> e tenho <b>foco em full-stack</b>: hoje estudo <b>back-end com PHP e SQL</b>
+          para levar as interfaces que eu construo até o servidor e o banco de dados.</p>
+        <div class="cta rv d2">
+          <a class="btn btn--s" href="#projetos" data-mag><span>Ver projetos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+          <a class="btn" href="#contato" data-mag><span>falar comigo</span></a>
+        </div>
+      </div>
+
+      <div class="stage-wrap" id="stageWrap">
+        <div class="ghost" aria-hidden="true"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></div>
+        <!-- Espaço reservado para o carro. -->
+        <div class="stage" id="stage"></div>
+              </div>
+    </div>
+
+    <!-- Tudo da formação em um card só. -->
+    <div class="status" aria-label="Status da formação.">
+      <div class="status__hd"><span><i class="fls s" data-n="3"></i>&nbsp; telemetria da formação</span><b>volta atual · full-stack developer</b></div>
+      <div class="status__grid">
+        <div class="stat">
+          <div class="stat__top"><span class="stat__k">Front-end developer</span><span class="chip chip--ok">Formada</span></div>
+          <div class="segs" data-fill="10"></div>
+          <div class="stat__n"><span>HTML5 · CSS3 · JS · React</span><b>100%</b></div>
+        </div>
+        <div class="stat">
+          <div class="stat__top"><span class="stat__k">Back-end developer</span><span class="chip chip--go">Em formação</span></div>
+          <div class="segs" data-fill="6"></div>
+          <div class="stat__n"><span>PHP · SQL</span><b>Estudando</b></div>
+        </div>
+        <div class="stat">
+          <div class="stat__top"><span class="stat__k">Full-stack developer</span><span class="chip chip--ti">Foco</span></div>
+          <div class="segs" data-fill="8"></div>
+          <div class="stat__n"><span>Do layout ao banco</span><b>Em andamento</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ====================== SOBRE ====================== -->
+<section class="sec" id="sobre"><div class="wrap">
+  <header class="head">
+    <span class="head__i"><i class="fls" data-n="1"></i><span data-scramble>01 · perfil profissional</span></span>
+    <h2 data-split>Sobre mim</h2>
+    <span class="head__n" aria-hidden="true">01</span>
+  </header>
+
+  <div class="about">
+    <div class="about__txt">
+      <p class="rv">Sou desenvolvedora <b>formada em front-end</b> e com <b>foco em full-stack</b>. Comecei pelo visual e estou indo para o servidor: hoje estudo <b>back-end com PHP e SQL</b>.</p>
+      <p class="rv d1">Gosto de transformar layout em produto de verdade: componentes organizados, interfaces responsivas e movimento na medida certa. Também contribuo com <b>open source na He4rt Developers</b>, onde aprendo e compartilho código com outras pessoas.</p>
+      <ul class="deliver rv d2">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span>Interfaces responsivas, do Figma ao código</span><em>front-end developer</em></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span>Componentes em React + Tailwind</span><em>front-end developer</em></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span>Lógica e interação com JavaScript</span><em>front-end developer</em></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span>Back-end e banco de dados com PHP + SQL</span><em>back-end developer</em></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span>Versionamento e colaboração com Git e GitHub</span><em>ferramentas</em></li>
+      </ul>
+    </div>
+
+    <div class="bento">
+      <div class="card b-goal rv" data-spot>
+        <span class="lbl">objetivo</span>
+        <span class="big">Estágio ou vaga júnior como front-end developer ou full-stack developer</span>
+      </div>
+      <div class="card b-edu rv d1" data-spot>
+        <span class="lbl">formação</span>
+        <span class="big">Técnico em Informática para Internet<small>Ênfase em front-end developer · concluído.</small></span>
+        <div class="meter"><i style="--w:100%"></i></div>
+      </div>
+      <div class="card b-now rv d2" data-spot>
+        <span class="lbl">estudando agora</span>
+        <span class="big">Back-end developer com PHP e SQL<small>Rumo a full-stack developer.</small></span>
+        <div class="meter"><i style="--w:60%"></i></div>
+      </div>
+      <div class="card b-he4rt rv d1" data-spot>
+        <div class="he4rt-mini" aria-hidden="true"><svg viewBox="-24 -16 632 548" fill="none" preserveAspectRatio="xMidYMid meet">
+          <path class="trace" d="M321.871 46.0393L142.46 225.416L107.15 190.106L107.144 190.099L107.137 190.093C102.363 185.487 98.5537 179.976 95.9328 173.881C93.3118 167.787 91.9312 161.232 91.8717 154.598C91.8122 147.964 93.0749 141.385 95.5862 135.244C98.0974 129.104 101.807 123.525 106.498 118.834C111.189 114.143 116.767 110.434 122.908 107.923C129.048 105.411 135.628 104.149 142.261 104.208C148.895 104.268 155.451 105.648 161.545 108.269C167.64 110.89 173.151 114.699 177.757 119.473L178.464 120.206L179.183 119.486L251.253 47.4526L251.969 46.7366L251.244 46.0295C222.277 17.7749 183.344 2.07155 142.88 2.3217C102.416 2.57185 63.6803 18.7554 35.065 47.3659C6.44979 75.9765 -9.74008 114.71 -9.9969 155.174C-10.2537 195.638 5.44322 234.573 33.693 263.545L33.7019 263.554L141.753 371.604L142.46 372.311L143.167 371.604L497.208 17.5631L498.208 16.5632L496.932 15.9537C476.231 6.06282 453.572 0.952379 430.63 1.00033C410.428 0.965204 390.418 4.92639 371.753 12.6559C353.087 20.3856 336.134 31.7312 321.871 46.0393Z"/><path class="trace" d="M569.434 88.4943L568.824 87.2175L567.824 88.218L430.627 225.45L395.317 190.106L394.61 189.398L393.903 190.105L321.869 262.139L321.162 262.846L321.869 263.553L357.179 298.863L213.818 442.224L213.112 442.93L213.818 443.638L285.852 515.707L286.559 516.414L287.266 515.707L539.384 263.589L538.677 262.882L539.385 263.589C561.877 241.089 576.843 212.171 582.224 180.815C587.605 149.459 583.137 117.206 569.434 88.4943Z"/>
+          <path class="led" pathLength="100" d="M321.871 46.0393L142.46 225.416L107.15 190.106L107.144 190.099L107.137 190.093C102.363 185.487 98.5537 179.976 95.9328 173.881C93.3118 167.787 91.9312 161.232 91.8717 154.598C91.8122 147.964 93.0749 141.385 95.5862 135.244C98.0974 129.104 101.807 123.525 106.498 118.834C111.189 114.143 116.767 110.434 122.908 107.923C129.048 105.411 135.628 104.149 142.261 104.208C148.895 104.268 155.451 105.648 161.545 108.269C167.64 110.89 173.151 114.699 177.757 119.473L178.464 120.206L179.183 119.486L251.253 47.4526L251.969 46.7366L251.244 46.0295C222.277 17.7749 183.344 2.07155 142.88 2.3217C102.416 2.57185 63.6803 18.7554 35.065 47.3659C6.44979 75.9765 -9.74008 114.71 -9.9969 155.174C-10.2537 195.638 5.44322 234.573 33.693 263.545L33.7019 263.554L141.753 371.604L142.46 372.311L143.167 371.604L497.208 17.5631L498.208 16.5632L496.932 15.9537C476.231 6.06282 453.572 0.952379 430.63 1.00033C410.428 0.965204 390.418 4.92639 371.753 12.6559C353.087 20.3856 336.134 31.7312 321.871 46.0393Z"/><path class="led b" pathLength="100" d="M569.434 88.4943L568.824 87.2175L567.824 88.218L430.627 225.45L395.317 190.106L394.61 189.398L393.903 190.105L321.869 262.139L321.162 262.846L321.869 263.553L357.179 298.863L213.818 442.224L213.112 442.93L213.818 443.638L285.852 515.707L286.559 516.414L287.266 515.707L539.384 263.589L538.677 262.882L539.385 263.589C561.877 241.089 576.843 212.171 582.224 180.815C587.605 149.459 583.137 117.206 569.434 88.4943Z"/></svg></div>
+        <div class="he4rt-txt">
+          <span class="lbl"><i class="fls s" data-n="2"></i>&nbsp; comunidade · open source</span>
+          <span class="big">Faço parte da <span>He4rt</span> Developers</span>
+          <p>Contribuo com open source: participo de iniciativas da comunidade e abro pull requests, aprendendo e compartilhando código com outras pessoas desenvolvedoras.</p>
+          <div class="chips"><span>Open source</span><span>Pull requests</span><span>Comunidade</span></div>
+          <a class="go" href="https://heartdevs.com/" target="_blank" rel="noopener">Conhecer a He4rt <span>↗</span></a>
+        </div>
+      </div>
+      <div class="card b-stack rv d1" data-spot>
+        <span class="lbl">stack principal</span>
+        <div class="chips"><span>React</span><span>JavaScript</span><span>Tailwind CSS</span><span>Vite</span><span>React Router</span><span>HTML5</span><span>CSS3</span><span>PHP</span><span>SQL</span><span>Git</span><span>Postman</span><span>Figma</span></div>
+      </div>
+      <div class="card b-num rv d1" data-spot><span class="num" data-count="3">0</span><span class="lbl">projetos publicados</span></div>
+      <div class="card b-num rv d2" data-spot><span class="num" data-count="13">0</span><span class="lbl">tecnologias</span></div>
+      <div class="card b-num rv d3" data-spot><span class="num" data-count="1">0</span><span class="lbl">comunidade open source</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ====================== SKILLS ====================== -->
+<section class="sec" id="skills"><div class="wrap">
+  <header class="head">
+    <span class="head__i"><i class="fls" data-n="2"></i><span data-scramble>02 · competências técnicas</span></span>
+    <h2 data-split>Skills</h2>
+    <span class="head__n" aria-hidden="true">02</span>
+  </header>
+  <div class="kit">
+    <article class="card rv" data-spot>
+      <i class="scan" aria-hidden="true"></i><span class="kit__no" aria-hidden="true">01</span>
+      <div class="kit__hd"><i class="fls s" data-n="1"></i><h3>Front-end developer</h3></div>
+      <p class="kit__sub">A base de tudo: estrutura, estilo, interação e componentes.</p>
+      <ul class="tiles">
+        <li class="tile" style="--k:0"><img src="img/skills/html.svg" alt="" width="44" height="44"><span><b>HTML5</b><small>Estrutura semântica</small></span><span></span></li>
+        <li class="tile" style="--k:1"><img src="img/skills/css.svg" alt="" width="44" height="44"><span><b>CSS3</b><small>Layout e responsividade</small></span><span></span></li>
+        <li class="tile" style="--k:2"><img src="img/skills/javascript.svg" alt="" width="44" height="44"><span><b>JavaScript</b><small>Lógica e interação</small></span><span></span></li>
+        <li class="tile" style="--k:3"><img src="img/skills/react.svg" alt="" width="44" height="44"><span><b>React</b><small>Componentes e rotas</small></span><span></span></li>
+        <li class="tile" style="--k:4"><img src="img/skills/tailwind.svg" alt="" width="44" height="44"><span><b>Tailwind CSS</b><small>Estilo utilitário</small></span><span></span></li>
+      </ul>
+      <div class="kit__ft"><div><span>05 tecnologias</span><b>Formada</b></div><div class="meter"><i style="--w:100%"></i></div></div>
+    </article>
+    <article class="card rv d1" data-spot>
+      <i class="scan" aria-hidden="true"></i><span class="kit__no" aria-hidden="true">02</span>
+      <div class="kit__hd"><i class="fls s" data-n="2"></i><h3>Back-end developer</h3></div>
+      <p class="kit__sub">O que estou estudando agora para fechar o circuito full-stack.</p>
+      <ul class="tiles">
+        <li class="tile" style="--k:0"><img src="img/skills/php.svg" alt="" width="44" height="44"><span><b>PHP</b><small>Lógica no servidor</small></span><em class="warm">Em formação</em></li>
+        <li class="tile" style="--k:1"><img src="img/skills/sql.svg" alt="" width="44" height="44"><span><b>SQL</b><small>Banco de dados</small></span><em class="warm">Em formação</em></li>
+        <li class="tile" style="--k:2"><img src="img/skills/python.svg" alt="" width="44" height="44"><span><b>Python</b><small>Lógica e scripts, aprendido fora do curso</small></span><span></span></li>
+      </ul>
+      <div class="kit__ft"><div><span>03 tecnologias</span><b>Em formação</b></div><div class="meter"><i style="--w:60%"></i></div></div>
+    </article>
+    <article class="card rv d2" data-spot>
+      <i class="scan" aria-hidden="true"></i><span class="kit__no" aria-hidden="true">03</span>
+      <div class="kit__hd"><i class="fls s" data-n="3"></i><h3>Ferramentas</h3></div>
+      <p class="kit__sub">Do design ao deploy, com versionamento e testes de API.</p>
+      <ul class="tiles">
+        <li class="tile" style="--k:0"><img src="img/skills/figma.svg" alt="" width="44" height="44"><span><b>Figma</b><small>Design e protótipos</small></span><span></span></li>
+        <li class="tile" style="--k:1"><img src="img/skills/git.svg" alt="" width="44" height="44"><span><b>Git</b><small>Versionamento</small></span><span></span></li>
+        <li class="tile" style="--k:2"><img src="img/skills/github.svg" alt="" width="44" height="44"><span><b>GitHub</b><small>Repositórios e pull requests</small></span><span></span></li>
+        <li class="tile" style="--k:3"><img src="img/skills/postman.svg" alt="" width="44" height="44"><span><b>Postman</b><small>Testes de API</small></span><span></span></li>
+        <li class="tile" style="--k:4"><img src="img/skills/vs-code.svg" alt="" width="44" height="44"><span><b>VS Code</b><small>Editor do dia a dia</small></span><span></span></li>
+      </ul>
+      <div class="kit__ft"><div><span>05 ferramentas</span><b>Uso diário</b></div><div class="meter"><i style="--w:90%"></i></div></div>
+    </article>
+  </div>
+</div></section>
+
+<div class="road" aria-hidden="true"><i></i><span><b>03</b>projetos</span></div>
+
+<!-- ====================== PROJETOS ====================== -->
+<section class="sec" id="projetos"><div class="wrap">
+  <header class="head">
+    <span class="head__i"><i class="fls" data-n="3"></i><span data-scramble>03 · projetos em destaque</span></span>
+    <h2 data-split>Projetos</h2>
+    <p>Três projetos publicados e rodando. Passe o mouse para inspecionar e clique para abrir.</p>
+    <span class="head__n" aria-hidden="true">03</span>
+  </header>
+
+  <div class="stack" id="stack">
+    <div class="pj" style="--i:0">
+      <article class="card" data-spot>
+        <a class="media" href="https://f1-nkjs.onrender.com" target="_blank" rel="noopener" aria-label="Abrir o site de Fórmula 1">
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>f1-nkjs.onrender.com</span></div>
+            <div class="shot"><img src="img/projetos/f1.webp" alt="Home do site de Fórmula 1, com o piloto Charles Leclerc em destaque" loading="lazy"></div></div>
+          <span class="live"><i></i>no ar</span><span class="open">abrir site ↗</span>
+        </a>
+        <div class="pj__info">
+          <span class="pj__no" aria-hidden="true">01</span>
+          <div class="pj__type"><i class="fls s" data-n="1"></i><span class="lbl">Site interativo · JavaScript puro</span></div>
+          <h3>Fórmula 1: Lights Out</h3>
+          <p>Um site que liga o motor: abertura com as cinco luzes de largada, motor sintetizado no navegador que ronca conforme você rola a página e volta simulada em Interlagos.</p>
+          <ul class="feats"><li>V6 turbo-híbrido gerado com Web Áudio</li><li>Teste de tempo de reação</li><li>Volta simulada em Interlagos</li></ul>
+          <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+          <a class="go" href="https://f1-nkjs.onrender.com" target="_blank" rel="noopener">ver projeto <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+    <div class="pj" style="--i:1">
+      <article class="card" data-spot>
+        <a class="media" href="https://esportes-zgzb.onrender.com" target="_blank" rel="noopener" aria-label="Abrir o portal de esportes">
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>esportes-zgzb.onrender.com</span></div>
+            <div class="shot"><img src="img/projetos/esportes.webp" alt="Home do portal de esportes, com o destaque de handebol" loading="lazy"></div></div>
+          <span class="live"><i></i>no ar</span><span class="open">abrir site ↗</span>
+        </a>
+        <div class="pj__info">
+          <span class="pj__no" aria-hidden="true">02</span>
+          <div class="pj__type"><i class="fls s" data-n="2"></i><span class="lbl">Portal web · React</span></div>
+          <h3>Portal de Esportes</h3>
+          <p>Portal que dá visibilidade a modalidades com pouco destaque na mídia local: handebol, tênis de mesa e vôlei.</p>
+          <ul class="feats"><li>Busca por modalidades e notícias</li><li>Rotas com React Router</li><li>Layout responsivo com Tailwind CSS</li></ul>
+          <ul class="tags"><li>React.js</li><li>Tailwind CSS</li><li>Vite</li><li>React Router</li></ul>
+          <a class="go" href="https://esportes-zgzb.onrender.com" target="_blank" rel="noopener">ver projeto <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+    <div class="pj" style="--i:2">
+      <article class="card" data-spot>
+        <a class="media" href="https://calculadora-js-edn1.onrender.com" target="_blank" rel="noopener" aria-label="Abrir as calculadoras">
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>calculadora-js-edn1.onrender.com</span></div>
+            <div class="shot"><img src="img/projetos/calculadoras.webp" alt="Home do site de calculadoras, com a calculadora de tinta em destaque" loading="lazy"></div></div>
+          <span class="live"><i></i>no ar</span><span class="open">abrir site ↗</span>
+        </a>
+        <div class="pj__info">
+          <span class="pj__no" aria-hidden="true">03</span>
+          <div class="pj__type"><i class="fls s" data-n="3"></i><span class="lbl">Web app · React</span></div>
+          <h3>Calculadoras</h3>
+          <p>Seis calculadoras do dia a dia em um só lugar: tinta, metros, matemática, sequência, Celsius e escolar. O resultado aparece na hora.</p>
+          <ul class="feats"><li>Seis calculadoras em um só app</li><li>Resultado em tempo real</li><li>Navegação entre telas com rotas</li></ul>
+          <ul class="tags"><li>React.js</li><li>Tailwind CSS</li><li>Vite</li><li>React Router</li></ul>
+          <a class="go" href="https://calculadora-js-edn1.onrender.com" target="_blank" rel="noopener">ver projeto <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div></section>
+
+<!-- ====================== CONTATO ====================== -->
+<section class="sec ct" id="contato">
+  <div class="flag" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="head__i rv"><i class="fls" data-n="4"></i><span data-scramble>04 · contato</span></span>
+    <h2 class="rv d1">Vamos trabalhar <span>juntos?</span></h2>
+    <p class="lead rv d2">Estou construindo minha carreira em desenvolvimento e adoraria conversar sobre oportunidades
+      como front-end developer, back-end developer ou full-stack developer.</p>
+    <ul class="soc">
+      <li class="rv d1"><a class="card" data-spot href="https://www.linkedin.com/in/biancavs/" target="_blank" rel="noopener"><span class="tp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="ar">↗</span></span><b>LinkedIn</b><small>in/biancavs</small></a></li>
+      <li class="rv d2"><a class="card" data-spot href="https://github.com/buzinei-bibi" target="_blank" rel="noopener"><span class="tp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span class="ar">↗</span></span><b>GitHub</b><small>buzinei-bibi</small></a></li>
+      <li class="rv d3"><a class="card" data-spot href="https://www.instagram.com/biibii_crf/" target="_blank" rel="noopener"><span class="tp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="ar">↗</span></span><b>Instagram</b><small>@biibii_crf</small></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 · buzina de bibi</span><span>front-end developer · back-end developer · full-stack developer</span></footer>
+
+<aside class="hud" aria-hidden="true">
+  <svg viewBox="0 0 120 120"><path class="tr" d="M24.6 95.4 A 50 50 0 1 1 95.4 95.4"/><path class="fi" id="hudFill" d="M24.6 95.4 A 50 50 0 1 1 95.4 95.4"/>
+    <g class="nd" id="hudNeedle"><path d="M60 64 L57 30 L60 20 L63 30 Z"/></g><circle cx="60" cy="60" r="6" class="hb"/></svg>
+  <div class="hud__r"><b id="hudNum">0</b><span>KM/H</span></div>
+  <div class="hud__t"><span id="hudGear">N</span><em id="hudDrs">DRS</em></div>
+</aside>
+<div class="shift" id="shift" aria-hidden="true"><span id="shiftG">D</span></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
