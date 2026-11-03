@@ -189,8 +189,8 @@ body.is-live .spot{opacity:1}
 .fumaca--frente{z-index:3}
 .puff{position:absolute; left:0; top:0; width:100px; height:100px; margin:-50px 0 0 -50px; opacity:0; pointer-events:none; will-change:transform,opacity;
   background:center/contain no-repeat}
-.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=12)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=12)}
-.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=12)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=12)}
+.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=13)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=13)}
+.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=13)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=13)}
 :root[data-theme="light"] .puff{filter:brightness(.72) contrast(1.1)}
 /* Bolha "bibi" e ondas. */
 .say{position:absolute; left:72%; top:2%; font:italic 700 clamp(1.8rem,4vw,3rem) 'STIX Two Text',serif; font-style:italic; color:var(--ac); pointer-events:none;
@@ -365,7 +365,7 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .live{position:absolute; left:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px;
   background:rgba(0,0,0,.72); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,.14); color:#fff; font:italic 500 .62rem var(--mono); letter-spacing:.16em; text-transform:lowercase}
 .live i{width:7px; height:7px; border-radius:50%; background:var(--ok); animation:ping 1.8s infinite}
-.open{position:absolute; right:14px; bottom:14px; z-index:2; padding:9px 15px; border-radius:999px; background:var(--ac); color:#fff; font:italic 700 .66rem var(--mono);
+.open{position:absolute; right:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:6px; padding:9px 15px; border-radius:999px; background:var(--ac); color:#fff; font:italic 700 .66rem var(--mono);
   letter-spacing:.14em; text-transform:lowercase; opacity:0; transform:translateY(10px); transition:.35s var(--ease)}
 .media:hover .open{opacity:1; transform:none}
 .pj__no{font:italic 700 clamp(4rem,9vw,7.5rem)/.8 var(--mono); color:transparent; -webkit-text-stroke:1.5px rgba(var(--ac-rgb),.6); letter-spacing:0}
@@ -380,6 +380,9 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .go{display:inline-flex; align-items:center; gap:12px; font:italic 700 .78rem var(--mono); letter-spacing:.12em; text-transform:lowercase;
   padding-bottom:5px; border-bottom:2px solid var(--ac); transition:gap .3s var(--ease), color .3s}
 .go:hover{gap:20px; color:var(--ac2)}
+/* Ícone de abrir em nova aba: desenho do arrow-up-right do Lucide, em SVG no HTML (no lugar do ↗, que alguns sistemas desenham como emoji). */
+.ico-ar{flex:none; width:1.15em; height:1.15em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .3s var(--ease)}
+.go:hover .ico-ar{transform:translate(2px,-2px)}
 
 /* ---------- Contato ---------- */
 .flag{position:absolute; left:0; right:0; top:0; height:26px; overflow:hidden; opacity:.55;
@@ -399,7 +402,7 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .soc .card:hover svg{fill:var(--ac2); transform:translateY(-3px) rotate(-6deg)}
 .soc b{font:italic 700 1.3rem var(--sans); font-style:italic; text-transform:lowercase; letter-spacing:0}
 .soc small{font:italic .74rem var(--mono); color:var(--mu)}
-.soc .ar{font:italic 700 1.4rem var(--mono); color:var(--ac); transition:transform .35s var(--ease)}
+.soc .ar{display:inline-flex; font:italic 700 1.4rem var(--mono); color:var(--ac); transition:transform .35s var(--ease)}
 .soc .card:hover .ar{transform:translate(5px,-5px)}
 
 footer{margin-top:clamp(70px,10vh,110px); border-top:1px solid var(--ln); padding:24px var(--gut) calc(26px + env(safe-area-inset-bottom,0px));
