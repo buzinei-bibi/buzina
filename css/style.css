@@ -189,8 +189,8 @@ body.is-live .spot{opacity:1}
 .fumaca--frente{z-index:3}
 .puff{position:absolute; left:0; top:0; width:100px; height:100px; margin:-50px 0 0 -50px; opacity:0; pointer-events:none; will-change:transform,opacity;
   background:center/contain no-repeat}
-.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=13)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=13)}
-.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=13)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=13)}
+.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=14)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=14)}
+.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=14)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=14)}
 :root[data-theme="light"] .puff{filter:brightness(.72) contrast(1.1)}
 /* Bolha "bibi" e ondas. */
 .say{position:absolute; left:72%; top:2%; font:italic 700 clamp(1.8rem,4vw,3rem) 'STIX Two Text',serif; font-style:italic; color:var(--ac); pointer-events:none;
@@ -380,8 +380,10 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .go{display:inline-flex; align-items:center; gap:12px; font:italic 700 .78rem var(--mono); letter-spacing:.12em; text-transform:lowercase;
   padding-bottom:5px; border-bottom:2px solid var(--ac); transition:gap .3s var(--ease), color .3s}
 .go:hover{gap:20px; color:var(--ac2)}
-/* Ícone de abrir em nova aba: desenho do arrow-up-right do Lucide, em SVG no HTML (no lugar do ↗, que alguns sistemas desenham como emoji). */
-.ico-ar{flex:none; width:1.15em; height:1.15em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .3s var(--ease)}
+/* Ícone "ir para o site": external-link do Lucide em SVG no HTML, sempre na cor do texto (sem vermelho, sem emoji). */
+.ico-ar{flex:none; width:1.05em; height:1.05em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .3s var(--ease)}
+.go .ico-ar,.soc .ar .ico-ar{color:var(--tx)}
+.soc .ar .ico-ar{width:20px; height:20px}
 .go:hover .ico-ar{transform:translate(2px,-2px)}
 
 /* ---------- Contato ---------- */
@@ -398,8 +400,8 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 @media (max-width:760px){.soc{grid-template-columns:1fr}}
 .soc a{display:grid; gap:4px; padding:22px; height:100%}
 .soc .tp{display:flex; justify-content:space-between; align-items:center; margin-bottom:22px}
-.soc svg{width:26px; height:26px; fill:var(--tx); transition:fill .3s, transform .4s var(--ease)}
-.soc .card:hover svg{fill:var(--ac2); transform:translateY(-3px) rotate(-6deg)}
+.soc svg:not(.ico-ar){width:26px; height:26px; fill:var(--tx); transition:fill .3s, transform .4s var(--ease)}
+.soc .card:hover svg:not(.ico-ar){fill:var(--ac2); transform:translateY(-3px) rotate(-6deg)}
 .soc b{font:italic 700 1.3rem var(--sans); font-style:italic; text-transform:lowercase; letter-spacing:0}
 .soc small{font:italic .74rem var(--mono); color:var(--mu)}
 .soc .ar{display:inline-flex; font:italic 700 1.4rem var(--mono); color:var(--ac); transition:transform .35s var(--ease)}
