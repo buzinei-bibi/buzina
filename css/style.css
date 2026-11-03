@@ -189,8 +189,8 @@ body.is-live .spot{opacity:1}
 .fumaca--frente{z-index:3}
 .puff{position:absolute; left:0; top:0; width:100px; height:100px; margin:-50px 0 0 -50px; opacity:0; pointer-events:none; will-change:transform,opacity;
   background:center/contain no-repeat}
-.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=14)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=14)}
-.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=14)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=14)}
+.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=15)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=15)}
+.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=15)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=15)}
 :root[data-theme="light"] .puff{filter:brightness(.72) contrast(1.1)}
 /* Bolha "bibi" e ondas. */
 .say{position:absolute; left:72%; top:2%; font:italic 700 clamp(1.8rem,4vw,3rem) 'STIX Two Text',serif; font-style:italic; color:var(--ac); pointer-events:none;
@@ -264,10 +264,18 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 /* ---------- Sobre ---------- */
 .about{display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:clamp(30px,5vw,70px); align-items:start}
 @media (max-width:980px){.about{grid-template-columns:1fr}}
-.about__txt p{margin:0 0 18px; color:var(--mu); font-size:clamp(1rem,1.2vw,1.1rem)}
-.about__txt p b{color:var(--tx); font-weight:500}
-.about__txt p:first-child{font-size:clamp(1.15rem,1.6vw,1.4rem); color:var(--tx); line-height:1.5}
-.deliver{list-style:none; margin:28px 0 0; padding:0; border-top:1px solid var(--ln)}
+.about__pitch{position:relative; margin:0; padding-left:22px; font-size:clamp(1.15rem,1.6vw,1.4rem); line-height:1.5; color:var(--mu)}
+.about__pitch::before{content:""; position:absolute; left:0; top:.3em; bottom:.3em; width:3px; border-radius:3px; background:linear-gradient(var(--ac),var(--ac2)); box-shadow:0 0 12px var(--glow)}
+.about__pitch b{color:var(--tx); font-weight:500}
+.about__blk{display:grid; gap:14px; margin-top:clamp(30px,4.5vh,44px)}
+.ways{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.ways li{display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:start; padding:18px 20px; border:1px solid var(--ln); border-radius:20px; background:var(--card);
+  transition:border-color .4s, transform .5s var(--ease)}
+.ways li:hover{border-color:rgba(var(--ac-rgb),.45); transform:translateX(6px)}
+.ways__no{font:italic 700 1.9rem/.9 var(--mono); color:transparent; -webkit-text-stroke:1px rgba(var(--ac-rgb),.75)}
+.ways h3{margin:0 0 4px; font:italic 700 1.05rem/1.2 var(--sans); text-transform:lowercase}
+.ways p{margin:0; font-size:.9rem; line-height:1.45; color:var(--mu)}
+.deliver{list-style:none; margin:0; padding:0; border-top:1px solid var(--ln)}
 .deliver li{position:relative; display:flex; gap:14px; align-items:center; padding:14px 0; border-bottom:1px solid var(--ln); overflow:hidden; isolation:isolate;
   transition:padding-left .4s var(--ease)}
 .deliver li::before{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,var(--soft),transparent); transform:translateX(-101%); transition:transform .5s var(--ease)}
@@ -276,7 +284,7 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .deliver span{font-size:.95rem} .deliver em{margin-left:auto; font:italic .62rem var(--mono); letter-spacing:.14em; text-transform:lowercase; color:var(--mu2); white-space:nowrap}
 .bento{display:grid; grid-template-columns:repeat(6,1fr); gap:12px}
 .bento .card{padding:22px 24px; display:flex; flex-direction:column; gap:10px; min-height:132px}
-.b-goal{grid-column:span 6} .b-edu{grid-column:span 3} .b-now{grid-column:span 3} .b-stack{grid-column:span 6}
+.b-goal{grid-column:span 6} .b-edu{grid-column:span 3} .b-now{grid-column:span 3}
 .b-num{grid-column:span 2; min-height:120px !important}
 @media (max-width:560px){.b-edu,.b-now{grid-column:span 6} .b-num{grid-column:span 6; min-height:0 !important; flex-direction:row !important; align-items:baseline; justify-content:space-between}}
 .big{font:italic 700 clamp(1.25rem,2vw,1.6rem)/1.15 var(--sans); letter-spacing:0}

@@ -36,7 +36,7 @@ var Sound=(function(){
   function ok(){if(!ctx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;ctx=new AC()}if(ctx.state==='suspended')ctx.resume();return ctx}
   /* Buzina = a voz da bibi falando "bibi" (toca sempre que apertam o botão ou o B, mesmo com o motor mudo).
      O áudio é decodificado uma vez só e fica na memória: toca na hora, sem rebobinar nem engasgar. */
-  var VOZ='audio/bibi.mp3?v=14',vozBuf=null,vozSrc=null,vozT0=-1,vozReserva=null;
+  var VOZ='audio/bibi.mp3?v=15',vozBuf=null,vozSrc=null,vozT0=-1,vozReserva=null;
   (function(){
     var OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
     if(!OAC||!window.fetch){vozReserva=new Audio(VOZ);return}
@@ -187,7 +187,7 @@ var Carla=(function(){
   /* Renderização em alta do vetor (WebP, pré-carregado no <head>). A largada não espera: o carro nasce fora da tela
      e leva ~0,3 s para entrar, tempo de sobra para a imagem terminar de decodificar. */
   if(corpo.decode)corpo.decode().catch(function(){});
-  [1,2,3,4].forEach(function(n){(new Image).src='img/carla/fumaca-'+n+'.webp?v=14'});
+  [1,2,3,4].forEach(function(n){(new Image).src='img/carla/fumaca-'+n+'.webp?v=15'});
   return{go:chegar,pisca:pisca};
 })();
 function blink(){Carla.pisca()}
