@@ -9,15 +9,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/tema.js"></script>
+<link rel="preload" as="image" href="img/carla/carro.webp?v=12" fetchpriority="high">
+<link rel="stylesheet" href="css/style.css?v=12">
+<noscript><style>.carla{opacity:1!important}</style></noscript>
+<script src="js/tema.js?v=12"></script>
 </head>
 <body>
 <div class="fx fx--grain" aria-hidden="true"></div>
 <div class="fx fx--vig" aria-hidden="true"></div>
 <div class="glowf" id="glowf" aria-hidden="true"></div>
 
-<!-- Buzina em tela cheia. -->
+<!-- buzina em tela cheia. -->
 <div class="honk" id="honk" aria-hidden="true"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></div>
 
 <div class="lamps" id="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -53,7 +55,7 @@
     <div class="hg">
       <div>
         <div class="kick rv">
-          <span class="tag"><b>front-end developer</b> rumo a full-stack developer</span>
+          <span class="tag"><b>front-end developer</b> objetivo full-stack developer</span>
         </div>
         <h1><span class="ln"><span>Oi, eu sou</span></span><span class="ln"><span class="a">a buzina</span></span><span class="ln"><span><span class="o">de</span> <span class="draw"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></span></span></span></h1>
         <p class="lede rv d1">Sou <b>formada em front-end</b> e tenho <b>foco em full-stack</b>: hoje estudo <b>back-end com PHP e SQL</b>
@@ -66,14 +68,42 @@
 
       <div class="stage-wrap" id="stageWrap">
         <div class="ghost" aria-hidden="true"><span class="bw" role="img" aria-label="bibi"><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i></i></span><span aria-hidden="true">b</span><span class="bw__i" aria-hidden="true">&#305;<i class="b2"></i></span></span></div>
-        <!-- Espaço reservado para o carro. -->
-        <div class="stage" id="stage"></div>
+        <!-- Carla Veloso em camadas vetoriais (corpo, aros, pálpebras, faróis) + fumaça atrás e na frente. -->
+        <div class="stage" id="stage">
+          <div class="fumaca" id="fumacaAtras" aria-hidden="true"></div>
+          <div class="carla" id="carla" aria-hidden="true" style="opacity:.01">
+            <i class="carla__rastro"></i><img class="carla__sombra" src="img/carla/sombra.webp?v=12" alt="" width="1406" height="700">
+            <div class="carla__mola" id="carlaMola">
+              <img class="carla__halo" src="img/carla/carro-halo.webp?v=12" alt="" width="1406" height="622">
+              <svg class="carla__camada" viewBox="0 0 1406 622">
+                <!-- roda de trás no formato da foto (pneu vetorial no tom do da frente + o mesmo aro), atrás da carroceria -->
+                <defs><clipPath id="cRodaT"><path d="M30 212 L42 214 L52 224 L57 250 L59 300 L61 350 L63 400 L66 440 L68 480 L65 505 L52 516 L36 518 L24 510 L14 485 L8 440 L6 380 L7 320 L11 270 L18 232Z"/></clipPath><linearGradient id="cPneuT" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b3635"/><stop offset=".45" stop-color="#2d2928"/><stop offset="1" stop-color="#1c1919"/></linearGradient></defs>
+                <g clip-path="url(#cRodaT)"><path d="M30 212 L42 214 L52 224 L57 250 L59 300 L61 350 L63 400 L66 440 L68 480 L65 505 L52 516 L36 518 L24 510 L14 485 L8 440 L6 380 L7 320 L11 270 L18 232Z" fill="#1f1c1c"/><ellipse cx="35" cy="365" rx="31" ry="153" fill="url(#cPneuT)"/><ellipse cx="35.5" cy="366" rx="27" ry="133" fill="none" stroke="#45403f" stroke-width="1.6"/>
+                  <g transform="matrix(24.000000 0.000000 -0.000000 120.000000 36.000000 366.000000)"><g class="carla__aro" id="aroT"><image href="img/carla/aro.webp?v=12" transform="matrix(0.012045 0.000149 -0.000273 0.006577 -3.169680 -2.895276)" x="118" y="279" width="310" height="310"/></g></g></g>
+              </svg>
+              <img class="carla__corpo" src="img/carla/carro.webp?v=12" alt="" width="1406" height="622" fetchpriority="high">
+              <svg class="carla__camada" viewBox="0 0 1406 622">
+                <!-- aro da frente inteiro (com a porca); parado ele cai sempre em volta completa, igual ao desenho original -->
+                <g transform="matrix(82.978637 -1.883049 3.448475 151.960877 273.000000 434.000000)"><g class="carla__aro" id="aroF"><image href="img/carla/aro.webp?v=12" transform="matrix(0.012045 0.000149 -0.000273 0.006577 -3.169680 -2.895276)" x="118" y="279" width="310" height="310"/></g></g>
+              </svg>
+              <svg class="carla__camada carla__olhos" viewBox="0 0 1406 622">
+                <defs>
+                  <clipPath id="cOlho"><path d="M515.0 172.2 L519.0 160.5 L523.0 157.2 L527.0 155.2 L531.0 153.2 L535.0 152.2 L539.0 148.8 L543.0 147.8 L547.0 145.8 L551.0 144.5 L555.0 143.5 L559.0 142.8 L563.0 141.5 L567.0 140.8 L571.0 140.5 L575.0 139.5 L579.0 139.5 L583.0 139.2 L587.0 138.8 L591.0 138.5 L595.0 138.5 L599.0 139.5 L603.0 139.5 L607.0 139.5 L611.0 140.5 L615.0 140.5 L619.0 140.5 L623.0 141.8 L627.0 142.8 L631.0 143.2 L635.0 143.2 L639.0 144.8 L643.0 145.2 L647.0 146.5 L651.0 146.8 L655.0 146.8 L659.0 149.5 L663.0 149.8 L667.0 152.2 L671.0 153.5 L675.0 155.2 L679.0 157.2 L683.0 157.8 L687.0 159.2 L691.0 159.2 L695.0 160.5 L699.0 160.8 L703.0 161.5 L707.0 160.5 L711.0 160.2 L715.0 159.5 L719.0 160.5 L723.0 159.5 L727.0 159.2 L731.0 157.5 L735.0 157.5 L739.0 157.5 L743.0 157.2 L747.0 156.5 L751.0 156.5 L755.0 155.5 L759.0 155.5 L763.0 155.5 L767.0 156.2 L771.0 156.5 L775.0 157.2 L779.0 157.5 L783.0 156.8 L787.0 157.5 L791.0 157.5 L795.0 158.2 L799.0 158.5 L803.0 158.5 L807.0 159.8 L811.0 160.2 L815.0 162.5 L819.0 162.2 L823.0 163.5 L827.0 164.2 L831.0 165.2 L835.0 167.2 L839.0 168.8 L843.0 170.8 L847.0 173.5 L851.0 174.8 L855.0 177.2 L859.0 179.8 L863.0 182.5 L867.0 188.5 L871.0 194.5 L875.0 201.5 L879.0 208.8 L881.0 211.8 L881.0 216.5 L879.0 216.5 L875.0 216.5 L871.0 216.5 L867.0 216.5 L863.0 216.5 L859.0 216.5 L855.0 216.5 L851.0 216.5 L847.0 216.5 L843.0 216.5 L839.0 216.5 L835.0 216.5 L831.0 216.5 L827.0 216.5 L823.0 216.5 L819.0 216.5 L815.0 216.5 L811.0 216.5 L807.0 216.5 L803.0 216.5 L799.0 216.5 L795.0 215.5 L791.0 215.5 L787.0 215.5 L783.0 215.5 L779.0 215.5 L775.0 215.5 L771.0 215.5 L767.0 215.5 L763.0 214.5 L759.0 214.5 L755.0 214.5 L751.0 214.5 L747.0 214.5 L743.0 214.5 L739.0 213.5 L735.0 213.5 L731.0 213.5 L727.0 213.5 L723.0 213.5 L719.0 213.5 L715.0 213.5 L711.0 213.5 L707.0 213.5 L703.0 213.5 L699.0 213.5 L695.0 213.5 L691.0 213.5 L687.0 213.5 L683.0 213.5 L679.0 213.5 L675.0 213.5 L671.0 213.5 L667.0 213.5 L663.0 213.5 L659.0 213.5 L655.0 213.5 L651.0 212.5 L647.0 212.5 L643.0 212.5 L639.0 212.5 L635.0 212.5 L631.0 212.5 L627.0 212.5 L623.0 212.5 L619.0 212.5 L615.0 212.5 L611.0 212.5 L607.0 212.5 L603.0 211.5 L599.0 211.5 L595.0 211.5 L591.0 211.5 L587.0 211.5 L583.0 211.5 L579.0 211.5 L575.0 211.5 L571.0 211.5 L567.0 211.5 L563.0 211.5 L559.0 211.5 L555.0 211.5 L551.0 211.5 L547.0 211.5 L543.0 211.5 L539.0 211.5 L535.0 210.5 L531.0 206.5 L527.0 204.5 L523.0 202.5 L519.0 199.5 L515.0 197.5Z"/></clipPath>
+                  <linearGradient id="cPalpebra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4554f"/><stop offset=".8" stop-color="#b8322d"/><stop offset="1" stop-color="#7c1411"/></linearGradient>
+                </defs>
+                <g clip-path="url(#cOlho)"><g class="carla__palpebra" id="carlaLid"><rect x="500" y="22" width="400" height="98" fill="url(#cPalpebra)"/><rect x="500" y="116" width="400" height="6" fill="#3b0907"/></g></g>
+              </svg>
+              <i class="carla__farol carla__farol--e"></i><i class="carla__farol carla__farol--d"></i>
+            </div>
+          </div>
+          <div class="fumaca fumaca--frente" id="fumacaFrente" aria-hidden="true"></div>
+        </div>
               </div>
     </div>
 
     <!-- Tudo da formação em um card só. -->
     <div class="status" aria-label="Status da formação.">
-      <div class="status__hd"><span><i class="fls s" data-n="3"></i>&nbsp; telemetria da formação</span><b>volta atual · full-stack developer</b></div>
+      <div class="status__hd"><span><i class="fls s" data-n="3"></i>&nbsp; formação acadêmica</span><b>objetivo · full-stack developer</b></div>
       <div class="status__grid">
         <div class="stat">
           <div class="stat__top"><span class="stat__k">Front-end developer</span><span class="chip chip--ok">Formada</span></div>
@@ -99,14 +129,14 @@
 <!-- ====================== SOBRE ====================== -->
 <section class="sec" id="sobre"><div class="wrap">
   <header class="head">
-    <span class="head__i"><i class="fls" data-n="1"></i><span data-scramble>01 · perfil profissional</span></span>
+    <span class="head__i"><i class="fls" data-n="1"></i><span>01 · perfil profissional</span></span>
     <h2 data-split>Sobre mim</h2>
     <span class="head__n" aria-hidden="true">01</span>
   </header>
 
   <div class="about">
     <div class="about__txt">
-      <p class="rv">Sou desenvolvedora <b>formada em front-end</b> e com <b>foco em full-stack</b>. Comecei pelo visual e estou indo para o servidor: hoje estudo <b>back-end com PHP e SQL</b>.</p>
+      <p class="rv">sou desenvolvedora <b>formada em front-end</b> e com <b>foco em full-stack</b>. Comecei pelo visual e estou indo para o servidor: hoje estudo <b>back-end com PHP e SQL</b>.</p>
       <p class="rv d1">Gosto de transformar layout em produto de verdade: componentes organizados, interfaces responsivas e movimento na medida certa. Também contribuo com <b>open source na He4rt Developers</b>, onde aprendo e compartilho código com outras pessoas.</p>
       <ul class="deliver rv d2">
         <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span>Interfaces responsivas, do Figma ao código</span><em>front-end developer</em></li>
@@ -158,7 +188,7 @@
 <!-- ====================== SKILLS ====================== -->
 <section class="sec" id="skills"><div class="wrap">
   <header class="head">
-    <span class="head__i"><i class="fls" data-n="2"></i><span data-scramble>02 · competências técnicas</span></span>
+    <span class="head__i"><i class="fls" data-n="2"></i><span>02 · competências técnicas</span></span>
     <h2 data-split>Skills</h2>
     <span class="head__n" aria-hidden="true">02</span>
   </header>
@@ -208,7 +238,7 @@
 <!-- ====================== PROJETOS ====================== -->
 <section class="sec" id="projetos"><div class="wrap">
   <header class="head">
-    <span class="head__i"><i class="fls" data-n="3"></i><span data-scramble>03 · projetos em destaque</span></span>
+    <span class="head__i"><i class="fls" data-n="3"></i><span>03 · projetos em destaque</span></span>
     <h2 data-split>Projetos</h2>
     <p>Três projetos publicados e rodando. Passe o mouse para inspecionar e clique para abrir.</p>
     <span class="head__n" aria-hidden="true">03</span>
@@ -276,7 +306,7 @@
 <section class="sec ct" id="contato">
   <div class="flag" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="head__i rv"><i class="fls" data-n="4"></i><span data-scramble>04 · contato</span></span>
+    <span class="head__i rv"><i class="fls" data-n="4"></i><span>04 · contato</span></span>
     <h2 class="rv d1">Vamos trabalhar <span>juntos?</span></h2>
     <p class="lead rv d2">Estou construindo minha carreira em desenvolvimento e adoraria conversar sobre oportunidades
       como front-end developer, back-end developer ou full-stack developer.</p>
@@ -299,6 +329,6 @@
 </aside>
 <div class="shift" id="shift" aria-hidden="true"><span id="shiftG">D</span></div>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=12"></script>
 </body>
 </html>
