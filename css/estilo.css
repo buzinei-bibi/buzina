@@ -2,11 +2,11 @@
    Buzina de bibi — portfólio.
    ========================================================================== */
 :root{
-  --bg:#050506; --bg-rgb:5,5,6; --bg2:#0c0c0f; --card:#09090c; --card2:#101014; --card-rgb:9,9,12; --chrome:#131317;
-  --tx:#f5f1f0; --mu:#968e93; --mu2:#5e575c; --fg-rgb:255,255,255;
+  --bg:#080606; --bg-rgb:8,6,6; --bg2:#110d0d; --card:#0c0909; --card2:#151211; --card-rgb:12,9,9; --chrome:#191514;
+  --tx:#f7f2f1; --mu:#9a8f8e; --mu2:#625857; --fg-rgb:255,255,255;
   --ln:rgba(var(--fg-rgb),.09); --ln2:rgba(var(--fg-rgb),.17);
-  --ac:#e10600; --ac2:#ff4d3d; --ac-rgb:225,6,0; --ti:#ffb454; --on:#fff; --ok:#2fbf71; --ok-tx:#9ff0c4;
-  --glow:rgba(var(--ac-rgb),.38); --soft:rgba(var(--ac-rgb),.12); --lamp-hi:#ffd0c8; --lamp-lo:#6a0300;
+  --ac:#e60c19; --ac2:#fc5549; --ac-rgb:230,12,25; --ti:#ffb454; --on:#fff; --ok:#2fbf71; --ok-tx:#9ff0c4;
+  --glow:rgba(var(--ac-rgb),.38); --soft:rgba(var(--ac-rgb),.12); --lamp-hi:#ffdad2; --lamp-lo:#6a0001;
   --vig:rgba(0,0,0,.8); --shadow:#000; --shadow2:rgba(0,0,0,.9); --car-filter:none; --grain:.05;
   --sans:'STIX Two Text',Georgia,serif; --body:'STIX Two Text',Georgia,serif; --mono:'STIX Two Text',Georgia,serif;
   --ease:cubic-bezier(.22,1,.36,1); --ease2:cubic-bezier(.76,0,.24,1);
@@ -15,16 +15,22 @@
 }
 /* Tema branco e roxo. */
 :root[data-theme="light"]{
-  --bg:#fbf9ff; --bg-rgb:251,249,255; --bg2:#f2edff; --card:#ffffff; --card2:#f6f2ff; --card-rgb:255,255,255; --chrome:#ece6ff;
-  --tx:#1c0f3a; --mu:#5f5380; --mu2:#9a8fbb; --fg-rgb:28,15,58;
-  --ac:#6d28d9; --ac2:#a855f7; --ac-rgb:109,40,217; --ti:#a21caf; --ok:#16a34a; --ok-tx:#15803d;
-  --glow:rgba(var(--ac-rgb),.3); --soft:rgba(var(--ac-rgb),.1); --lamp-hi:#efe2ff; --lamp-lo:#3b0a7a;
-  --vig:rgba(109,40,217,.06); --shadow:rgba(28,15,58,.28); --shadow2:rgba(28,15,58,.25); --car-filter:none; --grain:.03;
+  --bg:#edeafd; --bg-rgb:237,234,253; --bg2:#e5e1fc; --card:#faf9ff; --card2:#f2f1fe; --card-rgb:250,249,255; --chrome:#e1ddfc;
+  --tx:#1d0d40; --mu:#645a8d; --mu2:#9991be; --fg-rgb:29,13,64;
+  --ac:#782bf1; --ac2:#9828bd; --ac-rgb:120,43,241; --ti:#9828bd; --ok:#16a34a; --ok-tx:#15803d;
+  --glow:rgba(var(--ac-rgb),.3); --soft:rgba(var(--ac-rgb),.1); --lamp-hi:#eeebff; --lamp-lo:#350675;
+  --vig:rgba(120,43,241,.06); --shadow:rgba(29,13,64,.28); --shadow2:rgba(29,13,64,.25); --car-filter:none; --grain:.03;
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth; scroll-padding-top:90px}
 body{margin:0; background:var(--bg); color:var(--tx); text-transform:lowercase; font:italic 400 1.08rem/1.6 var(--body); overflow-x:hidden; -webkit-font-smoothing:antialiased}
+/* Tema claro: degradê no roxo da He4rt (#782bf1), suave fixo na tela (menos branco estourado, não cansa a vista). */
+body::before{content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0;
+  background:radial-gradient(110% 70% at 85% 0%,rgba(120,43,241,.10),transparent 60%),radial-gradient(90% 60% at 0% 100%,rgba(152,40,189,.07),transparent 60%),linear-gradient(180deg,#f3f2fe,#e5e1fb)}
+:root[data-theme="light"] body::before{opacity:1}
+/* Troca de tema instantânea: sem transições por um quadro (o sol/lua do botão continua animando). */
+:root.sem-transicao *:not(#themeBtn):not(#themeBtn *),:root.sem-transicao *::before,:root.sem-transicao *::after{transition:none !important}
 img,svg{display:block; max-width:100%}
 a{color:inherit; text-decoration:none}
 button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
@@ -32,6 +38,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 :focus-visible{outline:2px solid var(--ac2); outline-offset:3px}
 .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gut)}
 .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+.nw{white-space:nowrap}
 
 /* ---------- Atmosfera ---------- */
 .fx{position:fixed; inset:0; pointer-events:none; z-index:60}
@@ -103,7 +110,7 @@ body.is-live .nav{transform:none}
 .horn svg{width:20px; height:20px; fill:none; stroke:#fff; stroke-width:1.8} .horn .f{fill:#fff}
 .horn:active{transform:scale(.93)}
 .horn .bw{font-size:21px; letter-spacing:0; color:#fff; margin-top:-2px}
-.horn .bw__i i{background:radial-gradient(circle at 35% 35%,#fff 0,#ffe9e4 50%,#ffc2b8 100%); box-shadow:0 0 .1em #fff,0 0 .4em rgba(255,255,255,.7)}
+.horn .bw__i i{background:radial-gradient(circle at 35% 35%,#fff 0,#ffe8e2 50%,#fec0b2 100%); box-shadow:0 0 .1em #fff,0 0 .4em rgba(255,255,255,.7)}
 .horn .bw__i i::after{display:none}
 @media (max-width:1080px){.gear span{display:none} .gear{padding:8px 12px}}
 @media (max-width:560px){.horn .bw{display:none} .horn{padding:0 10px} .nav{padding:12px var(--gut); gap:8px} .gear{padding:7px 9px} .ib{width:36px; height:36px} .horn{height:36px} .brand .bw{font-size:26px}}
@@ -173,15 +180,25 @@ body.is-live .spot{opacity:1}
 :root[data-theme="light"] .carla__sombra{opacity:.6}
 /* Contorno escuro que destaca a Carla do bibi atrás: só no tema escuro (no claro vira auréola cinza). */
 .carla__halo{position:absolute; inset:0; display:block; width:100%; height:100%}
-:root[data-theme="light"] .carla__halo{display:none}
+:root[data-theme="light"] .carla__halo{opacity:0}
 .carla__mola{position:absolute; inset:0; transform-origin:50% 99%}
 .carla__corpo,.carla__camada{position:absolute; inset:0; display:block; width:100%; height:100%}
 .carla__camada{overflow:visible}
 .carla__farol{position:absolute; width:12%; aspect-ratio:1; border-radius:50%; pointer-events:none; mix-blend-mode:screen; opacity:0;
   transform:translate(-50%,-50%) scale(.7); transition:opacity .14s, transform .14s;
-  background:radial-gradient(closest-side,#fff 0,rgba(255,228,220,.9) 20%,rgba(255,77,61,.42) 48%,transparent 74%)}
+  background:radial-gradient(closest-side,#fff 0,rgba(255,218,210,.9) 20%,rgba(252,85,73,.42) 48%,transparent 74%)}
 .carla__farol--e{left:38.4%; top:59.8%}
 .carla__farol--d{left:92.2%; top:60.5%; width:8%}
+:root[data-theme="light"] .carla__farol{background:radial-gradient(closest-side,#fff 0,rgba(238,235,255,.9) 20%,rgba(120,43,241,.42) 48%,transparent 74%)}
+/* Carla vermelha no escuro e roxa no claro: as duas pinturas ficam carregadas em camadas e o tema só alterna qual aparece (sem piscar). */
+.carla__roxa{opacity:0}
+:root[data-theme="light"] .carla__roxa{opacity:1}
+:root[data-theme="light"] .carla__corpo:not(.carla__roxa),:root[data-theme="light"] .carla__aro image:not(.carla__roxa){opacity:0}
+/* Pálpebras no roxo da Carla do tema claro. */
+:root[data-theme="light"] #cPalpebra stop:nth-child(1){stop-color:#8869ee}
+:root[data-theme="light"] #cPalpebra stop:nth-child(2){stop-color:#6b4ec5}
+:root[data-theme="light"] #cPalpebra stop:nth-child(3){stop-color:#422a82}
+:root[data-theme="light"] #carlaLid rect:last-child{fill:#240e58}
 .stage.lit .carla__farol{opacity:.45}
 .stage.flash .carla__farol{opacity:1; transform:translate(-50%,-50%) scale(1.3)}
 /* Fumaça dos pneus (partículas criadas pelo script). */
@@ -189,8 +206,8 @@ body.is-live .spot{opacity:1}
 .fumaca--frente{z-index:3}
 .puff{position:absolute; left:0; top:0; width:100px; height:100px; margin:-50px 0 0 -50px; opacity:0; pointer-events:none; will-change:transform,opacity;
   background:center/contain no-repeat}
-.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=15)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=15)}
-.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=15)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=15)}
+.puff.p1{background-image:url(../img/carla/fumaca-1.webp?v=18)} .puff.p2{background-image:url(../img/carla/fumaca-2.webp?v=18)}
+.puff.p3{background-image:url(../img/carla/fumaca-3.webp?v=18)} .puff.p4{background-image:url(../img/carla/fumaca-4.webp?v=18)}
 :root[data-theme="light"] .puff{filter:brightness(.72) contrast(1.1)}
 /* Bolha "bibi" e ondas. */
 .say{position:absolute; left:72%; top:2%; font:italic 700 clamp(1.8rem,4vw,3rem) 'STIX Two Text',serif; font-style:italic; color:var(--ac); pointer-events:none;
@@ -241,10 +258,9 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
    SEÇÕES
    ========================================================================= */
 .sec{position:relative; padding:clamp(90px,14vh,150px) 0 clamp(40px,6vh,70px)}
-.head{position:relative; display:grid; gap:12px; margin-bottom:clamp(36px,6vh,62px); padding-top:24px; border-top:1px solid var(--ln)}
+.head{position:relative; display:grid; gap:12px; margin-bottom:clamp(36px,6vh,62px)}
 .head__i{display:flex; align-items:center; gap:14px; font:italic 500 .7rem var(--mono); letter-spacing:.24em; text-transform:lowercase; color:var(--mu)}
 .head h2{margin:0; font:italic 700 clamp(2.4rem,7.4vw,5.6rem)/.92 var(--sans); font-style:italic; letter-spacing:0; text-transform:lowercase}
-.head__n{position:absolute; right:0; top:22px; font:italic 700 clamp(3.6rem,10vw,8rem)/.8 var(--mono); color:transparent; -webkit-text-stroke:1px rgba(var(--fg-rgb),.09); pointer-events:none}
 .head p{margin:4px 0 0; max-width:56ch; color:var(--mu)}
 .ch{display:inline-block; overflow:hidden; vertical-align:bottom; padding-right:.1em; margin-right:-.1em}
 .ch > i{display:inline-block; font-style:inherit; transform:translateY(115%); transition:transform .9s var(--ease)}
@@ -269,10 +285,9 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .about__pitch b{color:var(--tx); font-weight:500}
 .about__blk{display:grid; gap:14px; margin-top:clamp(30px,4.5vh,44px)}
 .ways{list-style:none; margin:0; padding:0; display:grid; gap:10px}
-.ways li{display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:start; padding:18px 20px; border:1px solid var(--ln); border-radius:20px; background:var(--card);
+.ways li{padding:18px 20px; border:1px solid var(--ln); border-radius:20px; background:var(--card);
   transition:border-color .4s, transform .5s var(--ease)}
 .ways li:hover{border-color:rgba(var(--ac-rgb),.45); transform:translateX(6px)}
-.ways__no{font:italic 700 1.9rem/.9 var(--mono); color:transparent; -webkit-text-stroke:1px rgba(var(--ac-rgb),.75)}
 .ways h3{margin:0 0 4px; font:italic 700 1.05rem/1.2 var(--sans); text-transform:lowercase}
 .ways p{margin:0; font-size:.9rem; line-height:1.45; color:var(--mu)}
 .deliver{list-style:none; margin:0; padding:0; border-top:1px solid var(--ln)}
@@ -321,7 +336,6 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 @media (max-width:1020px){.kit{grid-template-columns:1fr}}
 .kit .card{display:flex; flex-direction:column; padding:26px 24px 22px}
 .kit .card::after{content:""; position:absolute; left:0; right:0; top:0; height:2px; background:linear-gradient(90deg,var(--ac),transparent 70%); opacity:.7}
-.kit__no{position:absolute; right:18px; top:auto; bottom:64px; font:italic 700 4.4rem/1 var(--mono); color:transparent; -webkit-text-stroke:1px rgba(var(--fg-rgb),.07); pointer-events:none}
 .kit__hd{display:flex; align-items:center; gap:12px; margin-bottom:8px}
 .kit__hd h3{margin:0; font:italic 700 1.5rem var(--sans); line-height:1.1; font-style:italic; letter-spacing:0; text-transform:lowercase}
 .kit__sub{margin:0 0 20px; font-size:.9rem; color:var(--mu); max-width:34ch}
@@ -376,8 +390,7 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .open{position:absolute; right:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:6px; padding:9px 15px; border-radius:999px; background:var(--ac); color:#fff; font:italic 700 .66rem var(--mono);
   letter-spacing:.14em; text-transform:lowercase; opacity:0; transform:translateY(10px); transition:.35s var(--ease)}
 .media:hover .open{opacity:1; transform:none}
-.pj__no{font:italic 700 clamp(4rem,9vw,7.5rem)/.8 var(--mono); color:transparent; -webkit-text-stroke:1.5px rgba(var(--ac-rgb),.6); letter-spacing:0}
-.pj__type{display:flex; align-items:center; gap:12px; margin:18px 0 10px}
+.pj__type{display:flex; align-items:center; gap:12px; margin:0 0 10px}
 .pj h3{margin:0 0 14px; font:italic 700 clamp(1.9rem,3.8vw,3.2rem)/.95 var(--sans); font-style:italic; letter-spacing:0; text-transform:lowercase}
 .pj p{margin:0 0 18px; color:var(--mu)}
 .feats{list-style:none; margin:0 0 18px; padding:0; display:grid; gap:7px}
@@ -395,11 +408,6 @@ body.is-live .segs i.f{background:var(--ac); box-shadow:0 0 8px var(--glow); tra
 .go:hover .ico-ar{transform:translate(2px,-2px)}
 
 /* ---------- Contato ---------- */
-.flag{position:absolute; left:0; right:0; top:0; height:26px; overflow:hidden; opacity:.55;
-  background:repeating-conic-gradient(var(--tx) 0 25%,var(--bg) 0 50%) 0 0/26px 26px;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent); mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);
-  animation:flag 1.6s linear infinite}
-@keyframes flag{to{background-position:52px 0}}
 .ct{padding-top:clamp(110px,16vh,170px)}
 .ct h2{margin:14px 0 18px; font:italic 700 clamp(2.6rem,9vw,6.6rem)/.9 var(--sans); font-style:italic; letter-spacing:0; text-transform:lowercase}
 .ct h2 span{color:var(--ac)}
@@ -421,14 +429,6 @@ footer button{border:1px solid var(--ln2); border-radius:999px; padding:9px 16px
 footer button:hover{border-color:var(--ac); background:var(--soft)}
 @media (min-width:621px){footer{padding-right:150px}}
 
-/* ---------- Estrada entre capítulos ---------- */
-.road{position:relative; height:clamp(90px,12vh,140px); overflow:hidden; border-top:1px solid var(--ln); background:linear-gradient(var(--bg),var(--bg2) 50%,var(--bg))}
-.road::before,.road::after{content:""; position:absolute; left:0; right:0; height:1px; background:rgba(var(--fg-rgb),.07)} .road::before{top:26%} .road::after{bottom:26%}
-.road i{position:absolute; left:-30%; right:-30%; top:calc(50% - 1px); height:2px; background:repeating-linear-gradient(90deg,rgba(var(--fg-rgb),.42) 0 52px,transparent 52px 124px); animation:roadRun 1.9s linear infinite}
-@keyframes roadRun{to{transform:translateX(-124px)}}
-.road span{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:flex; gap:12px; align-items:center; padding:9px 20px; background:var(--bg);
-  border:1px solid var(--ln2); border-radius:999px; font:italic .64rem var(--mono); letter-spacing:.22em; text-transform:lowercase; color:var(--mu); white-space:nowrap}
-.road span b{color:var(--ac2)}
 
 /* ---------- HUD (telemetria de rolagem) ---------- */
 .hud{position:fixed; right:clamp(14px,2.4vw,28px); bottom:clamp(26px,3vw,40px); z-index:65; width:92px; height:92px; pointer-events:none;
@@ -486,7 +486,6 @@ body.bi1 .honk .bw__i i:not(.b2),body.bi2 .honk .bw__i i.b2{opacity:1; filter:br
 :root[data-theme="light"] #themeBtn .moon-cut{cx:17; cy:7}
 :root[data-theme="light"] #themeBtn .rays{opacity:0; transform:scale(.4) rotate(-90deg)}
 :root[data-theme="light"] #themeBtn:hover svg{transform:rotate(-20deg)}
-::view-transition-old(root),::view-transition-new(root){animation:none; mix-blend-mode:normal}
 :root[data-theme="light"] .tile img,:root[data-theme="light"] .browser{box-shadow:0 10px 26px -14px var(--shadow)}
 :root[data-theme="light"] .card{box-shadow:0 18px 40px -30px var(--shadow)}
 :root[data-theme="light"] .ghost .bw{-webkit-text-stroke-color:rgba(var(--ac-rgb),.3)}

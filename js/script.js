@@ -20,13 +20,13 @@ $$('.segs').forEach(function(s){var f=+s.dataset.fill;for(var i=0;i<10;i++){var 
 (function(){
   var btn=$('#themeBtn'),meta=document.querySelector('meta[name=theme-color]');
   function sync(){var l=root.dataset.theme==='light';btn.setAttribute('aria-pressed',l);btn.setAttribute('aria-label',l?'Mudar para o tema preto e vermelho':'Mudar para o tema branco e roxo');
-    if(meta)meta.setAttribute('content',l?'#fbf9ff':'#050506')}
+    if(meta)meta.setAttribute('content',l?'#f3f2fe':'#080606')}
   function apply(){root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('bibi-theme',root.dataset.theme)}catch(e){}sync()}
   sync();
+  /* Troca na hora: tudo muda no mesmo quadro (.sem-transicao segura as transições próprias de cards, chips e botões, que ficariam atrasadas). */
   btn.addEventListener('click',function(){
-    if(!document.startViewTransition||REDUCED||document.hidden){apply();return}
-    var r=btn.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
-    var vt=document.startViewTransition(apply);[vt.finished,vt.updateCallbackDone].forEach(function(pr){pr&&pr.catch(function(){})});vt.ready.then(function(){root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},{duration:750,easing:'cubic-bezier(.76,0,.24,1)',pseudoElement:'::view-transition-new(root)'})}).catch(function(){});
+    root.classList.add('sem-transicao');apply();void root.offsetWidth;
+    requestAnimationFrame(function(){root.classList.remove('sem-transicao')});
   });
 })();
 
@@ -36,7 +36,7 @@ var Sound=(function(){
   function ok(){if(!ctx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;ctx=new AC()}if(ctx.state==='suspended')ctx.resume();return ctx}
   /* Buzina = a voz da bibi falando "bibi" (toca sempre que apertam o botão ou o B, mesmo com o motor mudo).
      O áudio é decodificado uma vez só e fica na memória: toca na hora, sem rebobinar nem engasgar. */
-  var VOZ='audio/bibi.mp3?v=15',vozBuf=null,vozSrc=null,vozT0=-1,vozReserva=null;
+  var VOZ='som de buzina/bibi.mp3?v=18',vozBuf=null,vozSrc=null,vozT0=-1,vozReserva=null;
   (function(){
     var OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
     if(!OAC||!window.fetch){vozReserva=new Audio(VOZ);return}
@@ -187,13 +187,13 @@ var Carla=(function(){
   /* Renderização em alta do vetor (WebP, pré-carregado no <head>). A largada não espera: o carro nasce fora da tela
      e leva ~0,3 s para entrar, tempo de sobra para a imagem terminar de decodificar. */
   if(corpo.decode)corpo.decode().catch(function(){});
-  [1,2,3,4].forEach(function(n){(new Image).src='img/carla/fumaca-'+n+'.webp?v=15'});
+  [1,2,3,4].forEach(function(n){(new Image).src='img/carla/fumaca-'+n+'.webp?v=18'});
   return{go:chegar,pisca:pisca};
 })();
 function blink(){Carla.pisca()}
 
 /* ========================= Buzina ========================= */
-/* Marcas medidas no audio/bibi.mp3 (s): a fala começa em FALA e cada "bi" (início, fim) acende o pingo do seu "i" e os faróis da Carla. */
+/* Marcas medidas no som de buzina/bibi.mp3 (s): a fala começa em FALA e cada "bi" (início, fim) acende o pingo do seu "i" e os faróis da Carla. */
 var honk=$('#honk'),hornT=[],hornN=0,FALA=1.02,SILABAS=[[1.033,1.173],[1.325,1.635]];
 function bibi(){
   hornT.forEach(clearTimeout);hornT=[];body.classList.remove('bi1','bi2');stage.classList.remove('flash');var later=function(f,ms){hornT.push(setTimeout(f,ms))},vez=++hornN;
